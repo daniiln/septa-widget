@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76413B431B274977004E52DF"
-               BuildableName = "my-train.app"
-               BlueprintName = "my-train"
+               BlueprintIdentifier = "767F3F7E1B28841400543442"
+               BuildableName = "next-train.app"
+               BlueprintName = "next-train"
                ReferencedContainer = "container:my-train.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,9 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76413B581B274977004E52DF"
-               BuildableName = "my-trainTests.xctest"
-               BlueprintName = "my-trainTests"
+               BlueprintIdentifier = "767F3F921B28841400543442"
+               BuildableName = "next-trainTests.xctest"
+               BlueprintName = "next-trainTests"
                ReferencedContainer = "container:my-train.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76413B581B274977004E52DF"
-               BuildableName = "my-trainTests.xctest"
-               BlueprintName = "my-trainTests"
+               BlueprintIdentifier = "767F3F921B28841400543442"
+               BuildableName = "next-trainTests.xctest"
+               BlueprintName = "next-trainTests"
                ReferencedContainer = "container:my-train.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "76413B431B274977004E52DF"
-            BuildableName = "my-train.app"
-            BlueprintName = "my-train"
+            BlueprintIdentifier = "767F3F7E1B28841400543442"
+            BuildableName = "next-train.app"
+            BlueprintName = "next-train"
             ReferencedContainer = "container:my-train.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -76,9 +76,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "76413B431B274977004E52DF"
-            BuildableName = "my-train.app"
-            BlueprintName = "my-train"
+            BlueprintIdentifier = "767F3F7E1B28841400543442"
+            BuildableName = "next-train.app"
+            BlueprintName = "next-train"
             ReferencedContainer = "container:my-train.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -95,9 +95,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "76413B431B274977004E52DF"
-            BuildableName = "my-train.app"
-            BlueprintName = "my-train"
+            BlueprintIdentifier = "767F3F7E1B28841400543442"
+            BuildableName = "next-train.app"
+            BlueprintName = "next-train"
             ReferencedContainer = "container:my-train.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
