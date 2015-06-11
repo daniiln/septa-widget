@@ -1,4 +1,5 @@
 # septa-widget
+![My image](https://github.com/dnguen/septa-widget/blob/master/septa-widget.png?raw=true)
 created during monetate hack days
 
 The app can be installed by using XCode >= 7.0
