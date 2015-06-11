@@ -19,7 +19,7 @@ extension String {
 
 class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate, UIPickerViewDelegate{
     @IBOutlet weak var lbl: UILabel!
-   
+
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var user_latitude: Double = 0.0
@@ -127,7 +127,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                             }
                         }
                     }
-                    lbl.text="Closest station: " + closest_station  + ", next train arriving at:" + 🕐 + ", " + orig_delay
+                    
+                    lbl.text="To: " + String(home_station) + "\n\tClosest station: " + closest_station  + "\n\tNext train arriving at:" + 🕐 + "\n\t" + orig_delay
                 }
             }
             else{
