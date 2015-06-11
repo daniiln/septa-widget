@@ -16,12 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TgD-MW-UjB">
-                                <rect key="frame" x="69" y="171" width="176" height="126"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="BUh-uf-MNK"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
                                 <rect key="frame" x="0.0" y="8" width="320" height="115"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -43,7 +37,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="400"/>
                     <connections>
-                        <outlet property="Picker" destination="TgD-MW-UjB" id="AwC-VS-FTo"/>
                         <outlet property="lbl" destination="GcN-lo-r42" id="dVT-zw-jlg"/>
                     </connections>
                 </viewController>

@@ -19,31 +19,26 @@ extension String {
 
 class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManagerDelegate, UIPickerViewDelegate{
     @IBOutlet weak var lbl: UILabel!
-    @IBOutlet weak var Picker: UIPickerView!
-    var pickerDataSource = ["White", "Red", "Green", "Blue"];
+   
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var user_latitude: Double = 0.0
     var user_longitude: Double = 0.0
-    let sharedData = ShareData.sharedInstance
-    let user = User.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-//        self.Picker.dataSource = self;
-        self.Picker.delegate = self;
         
     }
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!)
-    {
-        currentLocation = locations[locations.count - 1]
-            as? CLLocation
+    
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        currentLocation = locations[locations.count - 1] as? CLLocation
     }
-    func performWidgetUpdate()
-    {
+    
+    func performWidgetUpdate() {
         if currentLocation != nil {
             user_latitude = Double(currentLocation!.coordinate.latitude)
             user_longitude = Double(currentLocation!.coordinate.longitude)
@@ -62,17 +57,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         performWidgetUpdate()
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerDataSource.count;
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerDataSource[row]
-    }
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
         performWidgetUpdate()
         
@@ -97,7 +81,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
             var url_string = "http://www3.septa.org/hackathon/locations/get_locations.php?lon="
             url_string += String(stringInterpolationSegment: user_longitude) + "&lat="
             url_string += String(stringInterpolationSegment: user_latitude) + "&radius=3"
-            println(url_string)
             let url = NSURL(string: url_string)
             
             var request = NSURLRequest(URL: url!)
@@ -130,14 +113,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                 }
                 else{
                     let url2 = NSURL(string: "http://www3.septa.org/hackathon/NextToArrive/" + closest_station.replace(" ", withString:"%20") + "/" + home_station.replace(" ", withString:"%20") + "/1")
-                    println(url2)
                     var request = NSURLRequest(URL: url2!)
                     var data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
                     var 🕐 = "No trains found at the time"
                     var orig_delay = ""
                     if data != nil {
                         var objects = JSON(data: data!)
-                        println(objects)
                         for index in 0...objects.count-1{
                             🕐=String(stringInterpolationSegment: objects[index]["orig_departure_time"])
                             orig_delay = String(stringInterpolationSegment: objects[index]["orig_delay"])
@@ -147,17 +128,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                         }
                     }
                     lbl.text="Closest station: " + closest_station  + ", next train arriving at:" + 🕐 + ", " + orig_delay
-                    
-                    var manager: OneShotLocationManager?
-                    manager = OneShotLocationManager()
-                    manager!.fetchWithCompletion {location, error in
-                        if let loc = location {
-                            println(location)
-                        } else if let err = error {
-                            println(err.localizedDescription)
-                        }
-                        
-                    }
                 }
             }
             else{
